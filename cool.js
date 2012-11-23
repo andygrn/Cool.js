@@ -84,10 +84,10 @@ cool.createNumberGate = function( minimum_value, maximum_value ){
 };
 
 /*
-	Return a reusable function that draws a string bar segment or dotted line segment of a specified width, using a specified plotting function
+	Return a reusable function that draws a string bar segment or dotted line segment of a specified width, using a specified output function (probably console.log)
 	Useful for testing numeric sequences, animations, and easing functions
 */
-cool.createPlotter = function( graph_type, graph_width, plotting_function ){
+cool.createPlotter = function( graph_type, graph_width, output_function ){
 
 	var all_graph_types = {
 		bar: function( bar_width ){
@@ -103,7 +103,7 @@ cool.createPlotter = function( graph_type, graph_width, plotting_function ){
 		var line_size = percentage_of_graph_width * graph_width;
 		var line_string = all_graph_types[graph_type]( line_size );
 
-		plotting_function( line_string );
+		output_function( line_string );
 
 	};
 
