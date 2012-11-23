@@ -42,7 +42,7 @@ cool.createEaser = function( easing_function_name ){
 			return Math.sin( p * ( Math.PI / 2 ) );
 		},
 		easeOut: function( p ){
-			return Math.cos( ( p * ( Math.PI / 2 ) + Math.PI ) ) + 1;
+			return Math.cos( ( p * ( Math.PI / 2 ) ) + Math.PI ) + 1;
 		},
 		easeInOut: function( p ){
 			return ( Math.cos( ( p * Math.PI ) + Math.PI ) + 1 ) / 2;
