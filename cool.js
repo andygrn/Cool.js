@@ -116,9 +116,9 @@ cool.createPlotter = function( graph_type, graph_width, output_function ){
 	Array items are classified with boolean filters
 	Useful for styling list items, categorising data, etc.
 	Filter functions are passed
-		- the array item
-		- the array index
-		- the array length
+		1. the array item
+		2. the array index
+		3. the array length
 	The filter function name becomes the class name
 	Some default filters are included, remove them if you don't need them
 */
@@ -147,11 +147,11 @@ cool.classifyArray = function( array_to_be_classified ){
 
 	var list_of_item_class_lists = [];
 	var current_item_class_list = [];
-	var length = array_to_be_classified.length;
+	var item_count = array_to_be_classified.length;
 
-	for( var i = 0; i < length; i += 1 ){
+	for( var i = 0; i < item_count; i += 1 ){
 		for( var filter in filter_list ){
-			if( filter_list[filter]( array_to_be_classified[i], i, length ) ){
+			if( filter_list[filter]( array_to_be_classified[i], i, item_count ) ){
 				current_item_class_list.push( filter );
 			}
 		}
