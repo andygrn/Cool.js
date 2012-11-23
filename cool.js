@@ -98,10 +98,12 @@ cool.createPlotter = function( graph_type, graph_width, output_function ){
 		}
 	}
 
+	var graphing_function = all_graph_types[graph_type];
+
 	return function( percentage_of_graph_width ){
 
 		var line_size = percentage_of_graph_width * graph_width;
-		var line_string = all_graph_types[graph_type]( line_size );
+		var line_string = graphing_function( line_size );
 
 		output_function( line_string );
 
