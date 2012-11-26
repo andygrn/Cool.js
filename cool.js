@@ -30,7 +30,7 @@ cool.validateVariableType = function( variable, expected_type ){
 }
 
 /*
-	Return a reusable function for easing a changing value
+	Return a reusable function for easing a changing value between 0 and 1
 	The generated function is passed a number between 0 and 1, and returns the eased equivalent (also between 0 and 1)
 
 	Depends upon this.createNumberGate()
