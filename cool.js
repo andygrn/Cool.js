@@ -112,6 +112,23 @@ cool.createPlotter = function( graph_type, graph_width, output_function ){
 };
 
 /*
+	Return a reusable function that calls a random function from an array each time it is called
+*/
+cool.createRandomFunctionCaller = function( list_of_functions ){
+
+	var length = list_of_functions.length;
+
+	return function(){
+
+		var random_index = Math.floor( Math.random() * length );
+
+		list_of_functions[random_index].apply( this, arguments );
+
+	};
+
+};
+
+/*
 	Return an array of arrays containing string classes, with indexes parallel to the input array
 	Array items are classified with boolean filters
 	Useful for styling list items, categorising data, etc.
