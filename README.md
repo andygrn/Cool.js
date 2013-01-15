@@ -51,6 +51,21 @@ for( var i = 0; i <= 10; i += 1 ){
 //           ●
 ```
 
+## createRandomFunctionCaller()
+Return a reusable function that calls a random function from an array each time it is called
+Arguments are preserved and passed into the chosen function
+```javascript
+var randomFunction = cool.createRandomFunctionCaller( [
+	function( arguments ){
+		// do something
+	},
+	function( arguments ){
+		// do something else
+	}
+] );
+randomFunction( 'hello' );
+```
+
 ## classifyArray()
 Return an array of arrays containing string classes, with indexes parallel to the input array  
 Array items are classified with boolean filters
