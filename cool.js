@@ -113,6 +113,7 @@ cool.createPlotter = function( graph_type, graph_width, output_function ){
 
 /*
 	Return a reusable function that calls a random function from an array each time it is called
+	Arguments are preserved and passed into the chosen function
 */
 cool.createRandomFunctionCaller = function( list_of_functions ){
 
