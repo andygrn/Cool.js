@@ -52,7 +52,7 @@ for( var i = 0; i <= 10; i += 1 ){
 ```
 
 ## createRandomFunctionCaller()
-Return a reusable function that calls a random function from an array each time it is called
+Return a reusable function that calls a random function from an array each time it is called  
 Arguments are preserved and passed into the chosen function
 ```javascript
 var randomFunction = cool.createRandomFunctionCaller( [
