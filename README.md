@@ -66,6 +66,21 @@ var randomFunction = cool.createRandomFunctionCaller( [
 randomFunction( 'hello' );
 ```
 
+## createBreakerFunction()
+Return a function that wraps another function, setting a maximum on its calls
+Breaker can be reset to zero with `.reset();`
+Arguments are preserved and passed into the wrapped function
+```javascript
+var breakerFunction = cool.createBreakerFunction( function( arguments ){
+	return 'called';
+}, 2 );
+breakerFunction(); // 'called'
+breakerFunction(); // 'called'
+breakerFunction();
+breakerFunction.reset();
+breakerFunction(); // 'called'
+```
+
 ## classifyArray()
 Return an array of arrays containing string classes, with indexes parallel to the input array  
 Array items are classified with boolean filters

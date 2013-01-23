@@ -123,11 +123,36 @@ cool.createRandomFunctionCaller = function( list_of_functions ){
 
 		var random_index = Math.floor( Math.random() * length );
 
-		list_of_functions[random_index].apply( this, arguments );
+		list_of_functions[random_index].apply( list_of_functions[random_index], arguments );
 
 	};
 
 };
+
+/*
+	Return a function that wraps another function, setting a maximum on its calls
+	Breaker can be reset to zero with .reset();
+	Arguments are preserved and passed into the wrapped function
+*/
+cool.createBreakerFunction = function( function_to_break, call_limit ){
+
+	var breaker_wrapper = function(){
+		if( breaker_wrapper.call_count < call_limit ){
+			breaker_wrapper.call_count += 1;
+			function_to_break.apply( function_to_break, arguments );
+		}
+	};
+
+	breaker_wrapper.reset = function(){
+		this.call_count = 0;
+	};
+
+	breaker_wrapper.call_count = 0;
+
+	return breaker_wrapper;
+
+};
+
 
 /*
 	Return an array of arrays containing string classes, with indexes parallel to the input array
