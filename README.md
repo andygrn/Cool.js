@@ -67,8 +67,8 @@ randomFunction( 'hello' );
 ```
 
 ## createBreakerFunction()
-Return a function that wraps another function, setting a maximum on its calls
-Breaker can be reset to zero with `.reset();`
+Return a function that wraps another function, setting a maximum on its calls  
+Breaker can be reset to zero with `.reset();`  
 Arguments are preserved and passed into the wrapped function
 ```javascript
 var breakerFunction = cool.createBreakerFunction( function( arguments ){
